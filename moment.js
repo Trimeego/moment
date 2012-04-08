@@ -616,7 +616,7 @@
         },
 
         diff : function (input, val, asFloat) {
-            var inputMoment = moment(input),
+            var inputMoment = this._isUTC ? moment(input).utc() : moment(input).local(),
                 zoneDiff = (this.zone() - inputMoment.zone()) * 6e4,
                 diff = this._d - inputMoment._d - zoneDiff,
                 year = this.year() - inputMoment.year(),
