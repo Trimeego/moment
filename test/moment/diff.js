@@ -68,5 +68,13 @@ exports.diff = {
         test.equal(moment([2010, 0, 1, 2]).diff([2010], 'minutes'), 120, "minute diff");
         test.equal(moment([2010, 0, 1, 0, 4]).diff([2010], 'seconds'), 240, "second diff");
         test.done();
+    },
+
+    "year diffs include dates" : function(test) {
+        test.expect(1);
+
+        test.ok(moment([2012, 1, 19]).diff(moment([2002, 1, 20]), 'years', true) < 10, "year diff should include date of month");
+
+        test.done();
     }
 };
