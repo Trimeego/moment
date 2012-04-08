@@ -411,10 +411,12 @@
             return null;
         }
         var date,
-            matched;
+            matched,
+            isUTC;
         // parse Moment object
-        if (input && input._d instanceof Date) {
+        if (moment.isMoment(input)) {
             date = new Date(+input._d);
+            isUTC = input._isUTC;
         // parse string and format
         } else if (format) {
             if (isArray(format)) {
@@ -432,7 +434,7 @@
                 typeof input === 'string' ? makeDateFromString(input) :
                 new Date(input);
         }
-        return new Moment(date);
+        return new Moment(date, isUTC);
     };
 
     // creating with utc
