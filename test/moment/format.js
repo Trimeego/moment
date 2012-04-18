@@ -21,6 +21,7 @@ exports.format = {
         test.done();
     },
 
+    /* Format Milliseconds not in 1.5.2 release
     "format milliseconds" : function(test) {
         test.expect(6);
         var b = moment(new Date(2009, 1, 14, 15, 25, 50, 123));
@@ -32,7 +33,7 @@ exports.format = {
         test.equal(b.format('SS'), '78', 'Centiseconds');
         test.equal(b.format('SSS'), '789', 'Milliseconds');
         test.done();
-    },
+    },*/
 
     "format timezone" : function(test) {
         test.expect(4);
